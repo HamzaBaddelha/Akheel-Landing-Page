@@ -146,7 +146,7 @@ h2 { font-size: clamp(44px, 5.4vw, 82px); letter-spacing: -.04em; }
 .hotel-stars input:checked + span, .travel-style-options input:checked + span { border-color: var(--ink); background: var(--ink); color: var(--ivory); }
 .hotel-stars input:focus-visible + span, .travel-style-options input:focus-visible + span { outline: 3px solid var(--mist); outline-offset: 3px; }
 .reservation-submit { width: 100%; min-height: 58px; margin-top: 4px; }
-.reservation-honeypot { position: absolute; left: -9999px; }
+.reservation-honeypot { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .reservation-error { margin: 0; color: #7b2e28; font-size: 12px; font-weight: 700; }
 .reservation-success { min-height: 590px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(35px, 5vw, 70px); border-top: 5px solid var(--olive); background: var(--ivory); box-shadow: 0 24px 70px rgba(44,34,22,.1); }
 .reservation-success-mark { width: 64px; height: 64px; display: grid; place-items: center; margin-bottom: 30px; border: 1px solid var(--olive); border-radius: 50%; color: var(--olive); font-size: 28px; }

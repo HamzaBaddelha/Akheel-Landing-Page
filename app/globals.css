@@ -104,11 +104,13 @@ h2 { font-size: clamp(44px, 5.4vw, 82px); letter-spacing: -.04em; }
 .journey:nth-child(even) .journey-image { order: 2; }
 .journey-image { position: relative; min-height: 540px; overflow: hidden; }
 .journey-image img { object-fit: cover; transition: transform 1s cubic-bezier(.22,1,.36,1); }
-.journey-slider { position: absolute; inset: 0; }
-.journey-slider .journey-slide { opacity: 0; transform: scale(1.01); }
-.journey-slider .journey-slide.is-active { animation: journey-fade-in 1.1s ease-in-out both, journey-settle 5.5s ease-out both; }
-@keyframes journey-fade-in { from { opacity: 0; } to { opacity: 1; } }
-@keyframes journey-settle { from { transform: scale(1.01); } to { transform: scale(1); } }
+.journey-slider-shell { position: absolute; inset: 0; direction: ltr; }
+.journey-slider { position: absolute; inset: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; overscroll-behavior-inline: contain; scrollbar-width: none; }
+.journey-slider::-webkit-scrollbar { display: none; }
+.journey-slide { position: relative; flex: 0 0 100%; min-width: 0; scroll-snap-align: start; scroll-snap-stop: always; }
+.journey-slider-dots { position: absolute; z-index: 2; bottom: 16px; left: 50%; display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: rgba(34,24,14,.35); transform: translateX(-50%); }
+.journey-slider-dot { width: 8px; height: 8px; padding: 0; border: 1px solid rgba(225,224,212,.9); border-radius: 50%; background: transparent; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.journey-slider-dot.is-active { background: var(--ivory); transform: scale(1.2); }
 .journey:hover .journey-image img { transform: scale(1.025); }
 .journey-copy { padding: clamp(42px, 6vw, 88px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
 .journey-index { color: #625d3f; font: 20px Georgia, serif; }
@@ -232,6 +234,7 @@ h2 { font-size: clamp(44px, 5.4vw, 82px); letter-spacing: -.04em; }
   .journey { display: flex; flex-direction: column; min-height: auto; }
   .journey:nth-child(even) .journey-image { order: 0; }
   .journey-image { min-height: clamp(380px, 62vh, 520px); }
+  .journey-slider-dots { bottom: 12px; }
   .journey-copy { padding: 45px 0 65px; }
   .journey-copy h3 { font-size: 44px; }
   .reservation-form { grid-template-columns: 1fr; padding: 30px 20px 36px; box-shadow: none; }

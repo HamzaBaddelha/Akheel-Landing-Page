@@ -34,6 +34,7 @@ export function MoroccoJourneys({ inspirations, locale }: Props) {
                   images={sliderImages}
                   alt={item.alt}
                   sizes="(min-width: 1100px) 52vw, (min-width: 761px) 50vw, 100vw"
+                  locale={locale}
                 />
               </Reveal>
               <Reveal className="journey-copy">

@@ -7,6 +7,6 @@ const messages: Record<Locale, string> = {
 };
 
 export function whatsappUrl(locale: Locale) {
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
-  return number ? `https://wa.me/${number}?text=${encodeURIComponent(messages[locale])}` : `#lead-form`;
+  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") || "966564086392";
+  return `https://wa.me/${number}?text=${encodeURIComponent(messages[locale])}`;
 }
